@@ -1,0 +1,7 @@
+Multiple Recursion Tetranacci Algorithm Output results:
+    TetranacciMultipleRecursion(5) is: 2.0
+    TetranacciMultipleRecursion(10) is: 56.0
+    TetranacciMultipleRecursion(15) is: 1490.0
+    TetranacciMultipleRecursion(20) is: 39648.0
+    TetranacciMultipleRecursion(25) is: 1055026.0
+    TetranacciMultipleRecursion(30) is: 2.807404E7
