@@ -1,0 +1,99 @@
+Pseudo code Linear Recursive Tetranacci Algorithm:
+ 
+	static double tetranacciLinearRecursion(double a,b,c,d, int n):
+		if n < 0:
+			throw IllegalArgumentException
+		if n < 3:
+			return 0
+		else if n == 3:
+			return d
+		else:
+			return tetranacciLinearRecursion(b,c,d,(a+b+c+d),n)
+
+
+Pseudo code Multiple Recursive Tetranacci Algorithm:
+
+	static double tetranacciMultipleRecursion(int a):
+		if a < 0:
+			throw IllegalArgumentException
+		if a < 3:
+			return 0
+		else if a == 3:
+			return 1
+		else
+			return tetranacciMultipleRecursion(a-1) +
+			       tetranacciMultipleRecursion(a-2) +
+			       tetranacciMultipleRecursion(a-3) +
+			       tetranacciMultipleRecursion(a-4)		  	
+
+
+a) The multiple recursion algorithm has a time complexity of O(2^n) because it returns 4 different recursive calls that call themselves individually until they reach the base case.
+
+														tetranacci(10)
+													     /        |       \
+													  /	      |		 \
+												tetranacci(9)	tetranacci(8)	tetranacci(7) tetranacci(6)
+											       /      |	     \	      |		      |	            |
+											     /	      |        \    . . .	    . . .         . . .
+										  tetranacci(8) tetranacci(7)  tetranacci(6) tetranacci(5)
+										/	|      \      |               |               |
+									      /	        |        \  . . .           . . .           . . .
+					 			   tetranacci(7) tetranacci(6) tetranacci(5) tetranacci(4)
+								  /	  |	  \     |	      |               |
+								/	  |	    \ . . .	    . . .	    . . .
+					  	    tetranacci(6) tetranacci(5) tetranacci(4) tetranacci(3)
+						    /       |       \     |             |             |
+						  /	    |         \ . . .         . . .          (1)
+					teteranacci(5) tetranacci(4) tetranacci(3) tetranacci(2)
+				      /	      |       \	    |		  |             |
+				    /	      |         \ . . .          (1)          (0)
+			   tetranacci(4) tetranacci(3) tetranacci(2) tetranacci(1)
+			 /	 |	\     |		    |		  |
+		       /	 |	  \  (1)	   (0)		 (0)
+	     tetranacci(3) tetranacci(2) tetranacci(1) tetranacci(0)
+	    	   |	  	 |	      |		    |
+	          (1)           (0)	     (0)	   (0)
+
+
+
+   The linear recursion algorithm has a time complexity of O(n) because it returns only 1 call at a time recursively until it reaches it base case.
+				   
+				   return (4+8+15+29) = 56
+			tetranacci(10)
+				\
+				 \      return (2+4+8+15) = 29
+			     tetranacci(9)
+				     \
+				      \      return (1+2+4+8) = 15
+				  tetranacci(8)
+					  \
+					   \      return (1+1+2+4) = 8
+				       tetranacci(7)
+					       \
+						\      return (0+1+1+2) = 4
+					    tetranacci(6)
+						    \
+						     \      return (0+0+1+1) = 2
+						 tetranacci(5)
+							 \
+							  \      return (0+0+0+1) = 1
+						      tetranacci(4)
+							      \
+							       \      return 1
+							   tetranacci(3)
+								   \
+							            \	   return 0
+								tetranacci(2)
+									\
+									 \	return 0       
+								     tetranacci(1)
+									     \
+									      \	     return 0
+									  tetranacci(0)
+
+Linear Recursion is much faster at compiling the output than Multiple Recursion due to the function only calling itself once on each function return while
+multiple recursion is much slower due to the function calling itself multiple times on each function return and grows exponentially in time to compute the output.
+
+
+b) The linear recursion algorithm is also a tail recursive algorithm because it returns its function as its last line of code, hence it also has a time
+complexity of O(n), which is linear and also faster than the multiple recursive algorithm discussed previously.
