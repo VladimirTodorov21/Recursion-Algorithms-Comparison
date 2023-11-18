@@ -1,0 +1,7 @@
+Multiple Recursion Tetranacci Algorithm Time results:
+    TetranacciMultipleRecursion(5) took 0.002 miliseconds to perform the algorithm.
+    TetranacciMultipleRecursion(10) took 0.0192 miliseconds to perform the algorithm.
+    TetranacciMultipleRecursion(15) took 0.1564 miliseconds to perform the algorithm.
+    TetranacciMultipleRecursion(20) took 0.6555 miliseconds to perform the algorithm.
+    TetranacciMultipleRecursion(25) took 8.8688 miliseconds to perform the algorithm.
+    TetranacciMultipleRecursion(30) took 238.1621 miliseconds to perform the algorithm.
